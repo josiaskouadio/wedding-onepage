@@ -83,6 +83,11 @@ function setupRsvp() {
     const payload = Object.fromEntries(new FormData(form).entries());
     payload.couple = config.couple.headline;
     payload.weddingDate = config.wedding.dateISO;
+    payload.weddingDateDisplay = config.wedding.dateDisplay;
+    payload.weddingTimeDisplay = config.wedding.timeDisplay;
+    payload.locationName = config.wedding.locationName;
+    payload.locationAddress = config.wedding.locationAddress;
+    payload.mapsUrl = config.wedding.mapsUrl;
     payload.createdAt = new Date().toISOString();
 
     try {

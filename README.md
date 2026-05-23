@@ -41,6 +41,8 @@ Sur Vercel, ajoutez une variable d'environnement `RSVP_WEBHOOK_URL` si vous voul
 9. Deployer, autoriser le script, puis copier l'URL de la web app.
 10. Dans Vercel, ajouter cette URL dans la variable d'environnement `RSVP_WEBHOOK_URL`.
 
+Le script envoie aussi un email HTML de confirmation a l'invite avec une carte d'invitation integree. Lors du premier deploiement, Google demandera donc l'autorisation d'ecrire dans le Sheet et d'envoyer des emails depuis le compte Google connecte.
+
 Apres modification d'une variable d'environnement Vercel, redeployer le projet.
 
 ## Deployer sur Vercel
