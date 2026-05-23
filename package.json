@@ -1,0 +1,13 @@
+{
+  "name": "wedding-onepage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node dev-server.mjs",
+    "start": "node dev-server.mjs",
+    "vercel:dev": "vercel dev",
+    "check": "node --check script.js && node --check api/rsvp.js && node --check dev-server.mjs"
+  },
+  "devDependencies": {}
+}

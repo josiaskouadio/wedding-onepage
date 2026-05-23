@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Site one-page de mariage avec compte a rebours, details de l'evenement et formulaire RSVP."
+    />
+    <title>Amelie & Noah - Mariage</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./site.config.js"></script>
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <header class="topbar" aria-label="Navigation principale">
+      <a class="brand" href="#home" data-bind="initials">A&N</a>
+      <nav class="nav">
+        <a href="#details">Details</a>
+        <a href="#programme">Programme</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#rsvp">RSVP</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero" aria-labelledby="hero-title">
+        <img class="hero__image" data-image="hero" alt="Couple de maries enlace au coucher du soleil" />
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <p class="eyebrow">Nous allons nous marier</p>
+          <h1 id="hero-title" data-bind="headline">Amelie & Noah</h1>
+          <p class="hero__subtitle" data-bind="subtitle">Deux oui, une soiree sous les etoiles.</p>
+          <div class="hero__meta" aria-label="Informations principales du mariage">
+            <span data-bind="dateDisplay">12 septembre 2026</span>
+            <span data-bind="locationName">Domaine de la Rose Blanche</span>
+          </div>
+          <a class="primary-link" href="#rsvp">Confirmer ma presence</a>
+        </div>
+      </section>
+
+      <section class="countdown-band" aria-label="Compte a rebours avant le mariage">
+        <div class="countdown" data-countdown>
+          <div>
+            <strong data-time="days">000</strong>
+            <span>jours</span>
+          </div>
+          <div>
+            <strong data-time="hours">00</strong>
+            <span>heures</span>
+          </div>
+          <div>
+            <strong data-time="minutes">00</strong>
+            <span>minutes</span>
+          </div>
+          <div>
+            <strong data-time="seconds">00</strong>
+            <span>secondes</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="details" class="section details-grid">
+        <div class="section-copy">
+          <p class="eyebrow">Le grand jour</p>
+          <h2>Une celebration elegante, intime et joyeuse.</h2>
+          <p>
+            Nous vous attendons pour une ceremonie en plein air, un cocktail dans les jardins et
+            une soiree pensee comme une grande table d'amis.
+          </p>
+        </div>
+
+        <div class="info-panel" aria-label="Details du mariage">
+          <div>
+            <span>Date</span>
+            <strong data-bind="dateDisplay">12 septembre 2026</strong>
+          </div>
+          <div>
+            <span>Heure</span>
+            <strong data-bind="timeDisplay">16h30</strong>
+          </div>
+          <div>
+            <span>Lieu</span>
+            <strong data-bind="locationName">Domaine de la Rose Blanche</strong>
+            <p data-bind="locationAddress">Route des Vignes, 33000 Bordeaux</p>
+          </div>
+          <a class="text-link" data-link="maps" href="#" target="_blank" rel="noreferrer">
+            Voir l'itineraire
+          </a>
+        </div>
+      </section>
+
+      <section class="story section">
+        <img data-image="portrait" alt="Portrait romantique du couple" />
+        <div>
+          <p class="eyebrow">Notre histoire</p>
+          <h2>Des petits hasards, puis une evidence.</h2>
+          <p>
+            Ce site est concu pour raconter le couple: une rencontre, une anecdote, une phrase qui
+            leur ressemble, ou meme une courte lettre aux invites. Remplacez ce texte pour chaque
+            mariage et la page prend tout de suite une ame.
+          </p>
+          <div class="quote">
+            "La plus belle partie de la fete, c'est de vous avoir avec nous."
+          </div>
+        </div>
+      </section>
+
+      <section id="programme" class="section timeline-section">
+        <div class="section-heading">
+          <p class="eyebrow">Programme</p>
+          <h2>Le rythme de la journee</h2>
+        </div>
+        <div class="timeline" data-timeline></div>
+      </section>
+
+      <section id="galerie" class="gallery-section" aria-labelledby="gallery-title">
+        <div class="section-heading">
+          <p class="eyebrow">Galerie</p>
+          <h2 id="gallery-title">Images, matieres, souvenirs.</h2>
+        </div>
+        <div class="gallery" data-gallery></div>
+      </section>
+
+      <section class="section extras">
+        <article>
+          <span>Dress code</span>
+          <h3>Garden chic</h3>
+          <p>Couleurs douces, lin, soie, costumes clairs et chaussures confortables pour le jardin.</p>
+        </article>
+        <article>
+          <span>Logement</span>
+          <h3>Chambres proches</h3>
+          <p>Une liste d'hotels et maisons d'hotes peut etre ajoutee pour guider les invites.</p>
+        </article>
+        <article>
+          <span>Cadeaux</span>
+          <h3>Presence d'abord</h3>
+          <p>Une cagnotte, une liste ou un simple message de remerciement peut vivre ici.</p>
+        </article>
+      </section>
+
+      <section id="rsvp" class="rsvp-section" aria-labelledby="rsvp-title">
+        <div class="rsvp-copy">
+          <p class="eyebrow">Reservation</p>
+          <h2 id="rsvp-title">Confirmez votre presence</h2>
+          <p>
+            Merci de repondre avant le <span data-bind="deadline">15 aout 2026</span>. Une reponse
+            par foyer suffit.
+          </p>
+        </div>
+
+        <form class="rsvp-form" data-rsvp-form>
+          <label>
+            Nom complet
+            <input name="name" type="text" autocomplete="name" required />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" required />
+          </label>
+          <div class="form-row">
+            <label>
+              Presence
+              <select name="attendance" required>
+                <option value="present">Oui, avec joie</option>
+                <option value="absent">Je ne pourrai pas venir</option>
+              </select>
+            </label>
+            <label>
+              Invites
+              <input name="guests" type="number" min="1" max="8" value="1" required />
+            </label>
+          </div>
+          <label>
+            Message, allergies ou regime alimentaire
+            <textarea name="message" rows="4"></textarea>
+          </label>
+          <button type="submit">Envoyer ma reponse</button>
+          <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span data-bind="headline">Amelie & Noah</span>
+      <a data-link="email" href="mailto:bonjour@amelie-noah.fr">Nous ecrire</a>
+    </footer>
+  </body>
+</html>
