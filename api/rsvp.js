@@ -12,11 +12,15 @@ export default async function handler(request, response) {
   }
 
   if (process.env.RSVP_WEBHOOK_URL) {
-    await fetch(process.env.RSVP_WEBHOOK_URL, {
+    const webhookResponse = await fetch(process.env.RSVP_WEBHOOK_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
+
+    if (!webhookResponse.ok) {
+      return response.status(502).json({ error: "RSVP webhook failed" });
+    }
   }
 
   return response.status(200).json({ ok: true });
